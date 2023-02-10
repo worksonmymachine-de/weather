@@ -3,7 +3,7 @@
 
 # Code 	        Description
 # 0 	          Clear sky
-# 1, 2, 3 	    Mainly clear, partly cloudy, and overcast
+# 1, 2, 3 	      Mainly clear, partly cloudy, and overcast
 # 45, 48 	      Fog and depositing rime fog
 # 51, 53, 55 	  Drizzle: Light, moderate, and dense intensity
 # 56, 57 	      Freezing Drizzle: Light and dense intensity
@@ -13,8 +13,8 @@
 # 77 	          Snow grains
 # 80, 81, 82 	  Rain showers: Slight, moderate, and violent
 # 85, 86 	      Snow showers slight and heavy
-# 95 * 	        Thunderstorm: Slight or moderate
-# 96, 99 * 	    Thunderstorm with slight and heavy hail
+# 95 * 	          Thunderstorm: Slight or moderate
+# 96, 99 * 	      Thunderstorm with slight and heavy hail
 
 ENGLISH = 0
 GERMAN = 1
