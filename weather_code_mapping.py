@@ -16,18 +16,14 @@
 # 95 * 	        Thunderstorm: Slight or moderate
 # 96, 99 * 	    Thunderstorm with slight and heavy hail
 
-ENGLISH = 0
-GERMAN = 1
+ENGLISH = 'en'
+GERMAN = 'de'
 
-_languages = {
-    ENGLISH: 'en',
-    GERMAN: 'de'
-}
 _UNKNOWN = 99999
 
 
 wmo = {
-    'en': {
+    ENGLISH: {
         0: 'Clear sky',
         1: 'mainly clear', 2: 'partly cloudy', 3: 'overcast',
         45: 'Fog', 48: 'depositing rime fog',
@@ -43,7 +39,7 @@ wmo = {
         96: 'thunderstorm with slight hail', 99: 'thunderstorm with heavy hail',
         _UNKNOWN: 'unknown'
     },
-    'de': {
+    GERMAN: {
         0: 'Klarer Himmel',
         1: 'Größtenteils klar', 2: 'Teilweise wolkig', 3: 'Bedeckt',
         45: 'Nebel', 48: 'Reifnebel',
@@ -63,5 +59,5 @@ wmo = {
 
 
 def weather(code: int, lang=None) -> str:
-    lang = _languages[ENGLISH] if lang is None or lang not in _languages.keys() else _languages[lang]
+    lang = ENGLISH if lang is None or lang not in wmo else lang
     return wmo[lang][code] if code in wmo[lang].keys() else wmo[lang][_UNKNOWN]
