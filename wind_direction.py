@@ -22,7 +22,7 @@ SOUTH_WEST = 5
 WEST = 6
 NORTH_WEST = 7
 
-_direction_abbreviations = {
+_directions = {
     ENGLISH: {
         NORTH: {SHORT: 'N', LONG: 'north'},
         NORTH_EAST: {SHORT: 'NE', LONG: 'north-east'},
@@ -46,10 +46,10 @@ _direction_abbreviations = {
 }
 
 
-def angle_direction_abbreviation(angle: int, lang: int = None, length: int = None) -> str:
+def direction(angle: int, lang: int = None, length: int = None) -> str:
     lang = ENGLISH if lang is None or lang not in _languages else lang
     length = SHORT if length is None or length not in _types else length
-    return _direction_abbreviations[lang][_map_angle_to_direction(angle)][length]
+    return _directions[lang][_map_angle_to_direction(angle)][length]
 
 
 def _map_angle_to_direction(angle: int) -> int:
