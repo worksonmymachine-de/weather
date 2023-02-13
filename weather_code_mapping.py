@@ -1,3 +1,5 @@
+# code source: worksonmymachine.de
+
 # WMO Weather interpretation codes (WW) as used by https://open-meteo.com/en/docs/dwd-api
 # translated by mustbeyourfault@worksonmymachine.de
 
@@ -16,17 +18,17 @@
 # 95 * 	        Thunderstorm: Slight or moderate
 # 96, 99 * 	    Thunderstorm with slight and heavy hail
 
-ENGLISH = 'en'
-GERMAN = 'de'
+ENGLISH = 0
+GERMAN = 1
 
 _UNKNOWN = 99999
 
 
 wmo = {
     ENGLISH: {
-        0: 'Clear sky',
+        0: 'clear sky',
         1: 'mainly clear', 2: 'partly cloudy', 3: 'overcast',
-        45: 'Fog', 48: 'depositing rime fog',
+        45: 'fog', 48: 'depositing rime fog',
         51: 'light drizzle', 53: 'moderate drizzle', 55: 'dense drizzle',
         56: 'light freezing drizzle', 57: 'dense freezing drizzle',
         61: 'slight rain', 63: 'moderate rain', 65: 'heavy rain',
@@ -58,6 +60,6 @@ wmo = {
 }
 
 
-def weather(code: int, lang=None) -> str:
+def weather(code: int, lang: int = None) -> str:
     lang = ENGLISH if lang is None or lang not in wmo else lang
     return wmo[lang][code] if code in wmo[lang].keys() else wmo[lang][_UNKNOWN]
