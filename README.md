@@ -1,7 +1,6 @@
 # weather
 All weather API query and data processing related content
 
-1)
 Mapping for WMO weather interpretation codes to german and english
 
 I am using the weather API https://open-meteo.com/en/docs/dwd-api to request location based weather information. It is also possible to get the weather interpretation code with the query. I couldn't find an existing mapping, so I wrote a simple mapper for german and english. If the translation could be better please let me know.
